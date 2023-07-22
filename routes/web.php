@@ -23,6 +23,10 @@ Route::get('film/{id}' , [\App\Http\Controllers\filmController::class , 'getIndi
 
 Route::post('film/comment/{id}' , [\App\Http\Controllers\filmController::class , 'saveComment']);
 
+Route::get('create-film' , [\App\Http\Controllers\filmController::class , 'AddFilm']);
+Route::post('insert/movie' , [\App\Http\Controllers\filmController::class , 'insertMovie'])->name('movies.store');
+
+
 
 Auth::routes();
 

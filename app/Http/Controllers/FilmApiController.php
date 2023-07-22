@@ -12,7 +12,7 @@ class FilmApiController extends Controller
 
         try{
 
-            $response = FilmsTraits::getFilmsListing();
+            $response = FilmsTraits::getFilmsListing($request);
 
             if(!empty($response) && count($response) > 0) {
                 return [
@@ -31,7 +31,7 @@ class FilmApiController extends Controller
 
             return [
                 'status' => 500,
-                'message' => 'something went wrong'
+                'message' => $e->getMessage()
             ];
         }
     }
