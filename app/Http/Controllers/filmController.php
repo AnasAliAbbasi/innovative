@@ -20,16 +20,19 @@ class filmController extends Controller
     public function getFilmFromApi (Request $request) : View {
 
         $response = FilmsTraits::getMovieFromRest();
+        $movies_obj = new \stdClass();
 
         if($response != 'Api_Failed'){
-            $movies_obj = (object) $response->body;
+            if($response->status == 200){
+                $movies_obj = (object) $response->body;
+            }
             return view('welcome' , [
                 'films' => $movies_obj,
                 'status' => 'success'
             ]);
         }else{
             return view('welcome' , [
-                'films' => new stdClass(),
+                'films' => new \stdClass(),
                 'status' => 'error'
             ]);
         }

@@ -9,7 +9,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                   <a href="{{url('create-film')}}"> <button class="btn btn-warning" >Add Film</button></a>
+                   <a href="{{url('create-film')}}" id="#add_film"> <button class="btn btn-warning" >Add Film</button></a>
                 </div>
             </div>
 
